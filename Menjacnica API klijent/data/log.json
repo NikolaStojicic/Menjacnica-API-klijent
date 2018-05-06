@@ -1,14 +1,86 @@
 [
   {
-    "datumVreme": "Sun May 06 15:10:11 CEST 2018",
+    "datumVreme": "Sun May 06 17:26:52 CEST 2018",
     "izValuta": "AFN",
     "uValuta": "AFN",
     "kurs": 1.0
   },
   {
-    "datumVreme": "Sun May 06 15:10:32 CEST 2018",
-    "izValuta": "HKD",
+    "datumVreme": "Sun May 06 17:28:30 CEST 2018",
+    "izValuta": "AFN",
+    "uValuta": "AFN",
+    "kurs": 1.0
+  },
+  {
+    "datumVreme": "Sun May 06 17:32:52 CEST 2018",
+    "izValuta": "BRL",
     "uValuta": "XOF",
-    "kurs": 69.822467
+    "kurs": 155.718938
+  },
+  {
+    "datumVreme": "Sun May 06 17:32:55 CEST 2018",
+    "izValuta": "BRL",
+    "uValuta": "XOF",
+    "kurs": 155.718938
+  },
+  {
+    "datumVreme": "Sun May 06 17:32:57 CEST 2018",
+    "izValuta": "BRL",
+    "uValuta": "XOF",
+    "kurs": 155.718938
+  },
+  {
+    "datumVreme": "Sun May 06 17:32:59 CEST 2018",
+    "izValuta": "BRL",
+    "uValuta": "XOF",
+    "kurs": 155.718938
+  },
+  {
+    "datumVreme": "Sun May 06 17:33:00 CEST 2018",
+    "izValuta": "BRL",
+    "uValuta": "XOF",
+    "kurs": 155.718938
+  },
+  {
+    "datumVreme": "Sun May 06 17:33:01 CEST 2018",
+    "izValuta": "BRL",
+    "uValuta": "XOF",
+    "kurs": 155.718938
+  },
+  {
+    "datumVreme": "Sun May 06 17:33:03 CEST 2018",
+    "izValuta": "XAF",
+    "uValuta": "XOF",
+    "kurs": 1.0
+  },
+  {
+    "datumVreme": "Sun May 06 17:33:05 CEST 2018",
+    "izValuta": "MYR",
+    "uValuta": "XOF",
+    "kurs": 139.110085
+  },
+  {
+    "datumVreme": "Sun May 06 17:33:06 CEST 2018",
+    "izValuta": "MYR",
+    "uValuta": "AUD",
+    "kurs": 0.336606
+  },
+  {
+    "datumVreme": "Sun May 06 17:33:09 CEST 2018",
+    "izValuta": "BYN",
+    "uValuta": "XAF",
+    "kurs": 271.213956
+  },
+  {
+    "datumVreme": "Sun May 06 17:33:13 CEST 2018",
+    "izValuta": "XCD",
+    "uValuta": "MUR",
+    "kurs": 12.649771
+  },
+  {
+    "datumVreme": "Sun May 06 17:33:16 CEST 2018",
+    "izValuta": "XCD",
+    "uValuta": "MUR",
+    "kurs": 12.649771
   }
 ]
