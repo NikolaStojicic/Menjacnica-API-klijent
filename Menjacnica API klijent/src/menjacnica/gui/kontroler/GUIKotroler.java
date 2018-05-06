@@ -5,6 +5,8 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.LinkedList;
 import java.util.Map;
@@ -64,7 +66,7 @@ public class GUIKotroler {
 		Log logData = new Log();
 		logData.setIzValuta(zahtevUrl.split("_")[0]);
 		logData.setuValuta(zahtevUrl.split("_")[1]);
-		logData.setDatumVreme(new GregorianCalendar().getTime().toString());
+		logData.setDatumVreme(new SimpleDateFormat("dd-MM-yyyy 'u' HH:mm:ss.SSSSS").format(new Date()));
 		logData.setKurs(valuta);
 		if (logList == null)
 			logList = new LinkedList<Log>();
