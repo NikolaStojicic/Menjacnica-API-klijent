@@ -1,4 +1,4 @@
-package menjacnica;
+package domain;
 
 public class Valuta {
 	private String fr;

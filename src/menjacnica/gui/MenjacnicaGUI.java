@@ -20,9 +20,9 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
-import menjacnica.Log;
-import menjacnica.Valuta;
-import menjacnica.Zemlja;
+import domain.Log;
+import domain.Valuta;
+import domain.Zemlja;
 import menjacnica.gui.kontroler.GUIKotroler;
 import menjacnica.util.URLConnectionUtil;
 
@@ -48,7 +48,6 @@ public class MenjacnicaGUI extends JFrame {
 	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public MenjacnicaGUI() {
-		String[] nizNazivaZemlji = GUIKotroler.getZemlje("http://free.currencyconverterapi.com/api/v3/countries");
 		setResizable(false);
 		setTitle("Menjacnica");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -64,12 +63,11 @@ public class MenjacnicaGUI extends JFrame {
 		contentPane.add(lblIzValuteZemlje);
 
 		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(nizNazivaZemlji));
+
 		comboBox.setBounds(42, 76, 146, 20);
 		contentPane.add(comboBox);
 
 		JComboBox comboBox_1 = new JComboBox();
-		comboBox_1.setModel(new DefaultComboBoxModel(nizNazivaZemlji));
 		comboBox_1.setBounds(246, 76, 146, 20);
 		contentPane.add(comboBox_1);
 
@@ -95,35 +93,17 @@ public class MenjacnicaGUI extends JFrame {
 		textField_1.setBounds(246, 148, 146, 20);
 		contentPane.add(textField_1);
 
+		GUIKotroler.napuniDrzave(comboBox_1);
+		GUIKotroler.napuniDrzave(comboBox);
+
 		JButton btnKonvertuj = new JButton("Konvertuj");
 		btnKonvertuj.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				// ZahtevUrl je u formatu EUR_RSD, uzima vrednosti iz comboBoxova
-				String zahtevUrl = GUIKotroler.getSkraceniNaziv((comboBox.getSelectedItem().toString())) + "_"
-						+ GUIKotroler.getSkraceniNaziv((comboBox_1.getSelectedItem().toString()));
-				// Valuta dobija vrednost jsonObjekta koji se dobija upitom q=RSD_EUR
-				Valuta valuta = GUIKotroler.getKonverzija(zahtevUrl);
-				// Kontrola da li je nadjena valuta
-				if (valuta != null) {
-					// Vrsi konverziju i upisuje u odgovarajuci textbox
-					izvrsiKonverziju(valuta.getVal());
-					// Cuva log
-					GUIKotroler.upmatiLog(zahtevUrl, valuta.getVal(), "data/log.json");
-				} else
-					JOptionPane.showMessageDialog(contentPane, "Nije pronadjena konverzija za: " + zahtevUrl, "ERROR",
-							JOptionPane.ERROR_MESSAGE);
+				String z = GUIKotroler.napraviZahtevUrl(comboBox, comboBox_1);
+				textField_1.setText(GUIKotroler.konvertujUValutu(textField, z));
 			}
 		});
 		btnKonvertuj.setBounds(170, 212, 89, 23);
 		contentPane.add(btnKonvertuj);
-	}
-
-	private void izvrsiKonverziju(double val) {
-		try {
-			double iznosIz = Double.parseDouble(textField.getText());
-			textField_1.setText(String.valueOf(iznosIz * val));
-		} catch (NumberFormatException nfe) {
-			JOptionPane.showMessageDialog(contentPane, "Nije broj.", "ERROR", JOptionPane.ERROR_MESSAGE);
-		}
 	}
 }

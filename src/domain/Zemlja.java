@@ -1,4 +1,4 @@
-package menjacnica;
+package domain;
 
 public class Zemlja {
 	private String alpha3;

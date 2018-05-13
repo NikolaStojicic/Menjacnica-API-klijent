@@ -1,4 +1,4 @@
-package menjacnica;
+package domain;
 
 public class Log {
 	private String datumVreme;
