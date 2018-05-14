@@ -11,8 +11,7 @@ import domain.Valuta;
 import menjacnica.util.URLConnectionUtil;
 
 public class SOgetKonverzija {
-	public static Valuta izvrsi(String zahtevUrl) {
-		String url = "http://free.currencyconverterapi.com/api/v3/convert?q=";
+	public static Valuta izvrsi(String url, String zahtevUrl) {
 		url += zahtevUrl;
 		try {
 			String content = URLConnectionUtil.getContent(url);

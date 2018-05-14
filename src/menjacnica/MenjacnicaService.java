@@ -2,8 +2,6 @@ package menjacnica;
 
 import java.util.LinkedList;
 
-import javax.swing.JOptionPane;
-
 import domain.Valuta;
 import domain.Zemlja;
 import menjacnica.sistemseoperacije.SOgetKonverzija;
@@ -27,12 +25,12 @@ public class MenjacnicaService {
 		return SOgetZemlje.izvrsi(url, listaZemlji);
 	}
 
-	public Valuta getKonverzija(String zahtevUrl) {
-		return SOgetKonverzija.izvrsi(zahtevUrl);
+	public Valuta getKonverzija(String url, String zahtevUrl) {
+		return SOgetKonverzija.izvrsi(url, zahtevUrl);
 	}
 
-	public void zapamtiLog(String zahtevUrl, double valuta) {
-		SOzapamtiLog.izvrsi(zahtevUrl, valuta, "data/log.json");
+	public void zapamtiLog(String zahtevUrl, double valuta, String path) {
+		SOzapamtiLog.izvrsi(zahtevUrl, valuta, path);
 	}
 
 	public String getSkraceniNaziv(String punoIme) {

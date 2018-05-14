@@ -1,37 +1,15 @@
 package menjacnica.gui;
 
-import java.awt.EventQueue;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.GregorianCalendar;
-import java.util.LinkedList;
-import java.util.Map;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
-
-import domain.Log;
-import domain.Valuta;
-import domain.Zemlja;
 import menjacnica.gui.kontroler.GUIKotroler;
-import menjacnica.util.URLConnectionUtil;
 
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
 import javax.swing.JButton;
-import javax.swing.DefaultComboBoxModel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -46,7 +24,7 @@ public class MenjacnicaGUI extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	@SuppressWarnings({ "rawtypes", "unchecked" })
+	@SuppressWarnings({ "rawtypes" })
 	public MenjacnicaGUI() {
 		setResizable(false);
 		setTitle("Menjacnica");
@@ -99,7 +77,7 @@ public class MenjacnicaGUI extends JFrame {
 		JButton btnKonvertuj = new JButton("Konvertuj");
 		btnKonvertuj.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				String z = GUIKotroler.napraviZahtevUrl(comboBox, comboBox_1);
+				String z = GUIKotroler.napraviZahtevURL(comboBox, comboBox_1);
 				textField_1.setText(GUIKotroler.konvertujUValutu(textField, z));
 			}
 		});
